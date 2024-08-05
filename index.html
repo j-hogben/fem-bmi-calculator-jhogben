@@ -12,6 +12,8 @@
     />
 
     <link rel="stylesheet" href="./dist/styles.css" />
+    <script src="./script.js" defer></script>
+
     <title>Frontend Mentor | Body Mass Index Calculator</title>
   </head>
   <body>
@@ -31,97 +33,104 @@
 
         <!-- BMI CALCULATOR -->
         <article>
-          <form action="">
+          <div class="border-2 border-slate-600">
             <h2>Enter your details below</h2>
 
             <!-- IMPERIAL OR METRIC -->
-            <div class="flex">
+            <form id="unitSelection" class="flex">
               <label for="metric" class="flex">
                 <input
                   type="radio"
-                  name="imperialOrMetric"
+                  name="formUnits"
                   id="metric"
+                  value="metric"
                   checked
                 />
                 <p>Metric</p>
               </label>
               <label for="imperial" class="flex">
-                <input type="radio" name="imperialOrMetric" id="imperial" />
+                <input
+                  type="radio"
+                  name="formUnits"
+                  id="imperial"
+                  value="imperial"
+                />
                 <p>Imperial</p>
               </label>
-            </div>
+            </form>
 
-            <!-- METRIC CALCULATOR -->
-            <section>
-              <div class="form-group">
-                <label for="heightCm">Height</label>
-                <div
-                  class="input-container flex justify-between border border-red-500"
-                >
-                  <input type="text" id="heightCm" inputmode="decimal" />
-                  <p>cm</p>
+            <!--  -->
+            <form action="" id="BMICalculator">
+              <!-- METRIC CALCULATOR -->
+              <section id="metric-form" class="block">
+                <div class="form-group">
+                  <label for="heightCm">Height</label>
+                  <div
+                    class="input-container flex justify-between border border-red-500"
+                  >
+                    <input type="text" id="heightCm" inputmode="decimal" />
+                    <p>cm</p>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="weightKg">Weight</label>
-                <div
-                  class="input-container flex justify-between border border-red-500"
-                >
-                  <input type="text" id="weightKg" inputmode="decimal" />
-                  <p>cm</p>
+                <div class="form-group">
+                  <label for="weightKg">Weight</label>
+                  <div
+                    class="input-container flex justify-between border border-red-500"
+                  >
+                    <input type="text" id="weightKg" inputmode="decimal" />
+                    <p>kg</p>
+                  </div>
                 </div>
-              </div>
-            </section>
-
-            <!-- IMPERIAL CALCULATOR -->
-            <section>
-              <div class="form-group">
-                <label for="heightFt">Height</label>
-                <div
-                  class="input-container flex justify-between border border-red-500"
-                >
-                  <input type="text" id="heightFt" inputmode="numeric" />
-                  <p>ft</p>
+              </section>
+              <!-- IMPERIAL CALCULATOR -->
+              <section id="imperial-form" class="hidden">
+                <div class="form-group">
+                  <label for="heightFt">Height</label>
+                  <div
+                    class="input-container flex justify-between border border-red-500"
+                  >
+                    <input type="text" id="heightFt" inputmode="numeric" />
+                    <p>ft</p>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div
-                  class="input-container flex justify-between border border-red-500"
-                >
-                  <input type="text" id="heightIn" inputmode="numeric" />
-                  <p>in</p>
+                <div class="form-group">
+                  <div
+                    class="input-container flex justify-between border border-red-500"
+                  >
+                    <input type="text" id="heightIn" inputmode="numeric" />
+                    <p>in</p>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="WeightSt">Weight</label>
-                <div
-                  class="input-container flex justify-between border border-red-500"
-                >
-                  <input type="text" id="weightSt" inputmode="numeric" />
-                  <p>st</p>
+                <div class="form-group">
+                  <label for="weightSt">Weight</label>
+                  <div
+                    class="input-container flex justify-between border border-red-500"
+                  >
+                    <input type="text" id="weightSt" inputmode="numeric" />
+                    <p>st</p>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div
-                  class="input-container flex justify-between border border-red-500"
-                >
-                  <input type="text" id="weightLbs" inputmode="numeric" />
-                  <p>lbs</p>
+                <div class="form-group">
+                  <div
+                    class="input-container flex justify-between border border-red-500"
+                  >
+                    <input type="text" id="weightLbs" inputmode="numeric" />
+                    <p>lbs</p>
+                  </div>
                 </div>
+              </section>
+              <!-- RESULTS -->
+              <div>
+                <p>Your BMI is...</p>
+                <p id="BMIResult"></p>
+                <p>
+                  Your BMI suggests you're <span id="weightDescription"></span>.
+                  Your ideal weight is between
+                  <span id="idealWeightRange"></span>.
+                </p>
               </div>
-            </section>
-
-            <!-- RESULTS -->
-            <div>
-              <p>Your BMI is...</p>
-              <p id="BMIResult"></p>
-              <p>
-                Your BMI suggests you're <span id="weightDescription"></span>.
-                Your ideal weight is between
-                <span id="idealWeightRange"></span>.
-              </p>
-            </div>
-          </form>
+            </form>
+          </div>
         </article>
       </section>
 
