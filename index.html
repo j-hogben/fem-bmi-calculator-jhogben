@@ -16,7 +16,7 @@
 
     <title>Frontend Mentor | Body Mass Index Calculator</title>
   </head>
-  <body>
+  <body class="font-body text-bodyM/150">
     <main>
       <section>
         <!-- OPENING DESCRIPTION -->
@@ -44,6 +44,8 @@
                   name="formUnits"
                   id="metric"
                   value="metric"
+                  autocomplete="off"
+                  class="format-input"
                   checked
                 />
                 <p>Metric</p>
@@ -54,6 +56,8 @@
                   name="formUnits"
                   id="imperial"
                   value="imperial"
+                  autocomplete="off"
+                  class="format-input"
                 />
                 <p>Imperial</p>
               </label>
@@ -68,20 +72,33 @@
                   <div
                     class="input-container flex justify-between border border-red-500"
                   >
-                    <input type="text" id="heightCm" inputmode="decimal" />
+                    <input
+                      type="text"
+                      id="heightCm"
+                      inputmode="decimal"
+                      autocomplete="off"
+                      class="format-input decimal-allowed"
+                    />
                     <p>cm</p>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="weightKg">Weight</label>
+                  <label for="massKg">Weight</label>
                   <div
                     class="input-container flex justify-between border border-red-500"
                   >
-                    <input type="text" id="weightKg" inputmode="decimal" />
+                    <input
+                      type="text"
+                      id="massKg"
+                      inputmode="decimal"
+                      autocomplete="off"
+                      class="format-input decimal-allowed"
+                    />
                     <p>kg</p>
                   </div>
                 </div>
               </section>
+
               <!-- IMPERIAL CALCULATOR -->
               <section id="imperial-form" class="hidden">
                 <div class="form-group">
@@ -89,7 +106,13 @@
                   <div
                     class="input-container flex justify-between border border-red-500"
                   >
-                    <input type="text" id="heightFt" inputmode="numeric" />
+                    <input
+                      type="text"
+                      id="heightFt"
+                      inputmode="numeric"
+                      autocomplete="off"
+                      class="format-input"
+                    />
                     <p>ft</p>
                   </div>
                 </div>
@@ -97,16 +120,22 @@
                   <div
                     class="input-container flex justify-between border border-red-500"
                   >
-                    <input type="text" id="heightIn" inputmode="numeric" />
+                    <input
+                      type="text"
+                      id="heightIn"
+                      inputmode="numeric"
+                      autocomplete="off"
+                      class="format-input"
+                    />
                     <p>in</p>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="weightSt">Weight</label>
+                  <label for="massSt">Weight</label>
                   <div
                     class="input-container flex justify-between border border-red-500"
                   >
-                    <input type="text" id="weightSt" inputmode="numeric" />
+                    <input type="text" id="massSt" inputmode="numeric" />
                     <p>st</p>
                   </div>
                 </div>
@@ -114,19 +143,26 @@
                   <div
                     class="input-container flex justify-between border border-red-500"
                   >
-                    <input type="text" id="weightLbs" inputmode="numeric" />
+                    <input type="text" id="massLb" inputmode="numeric" />
                     <p>lbs</p>
                   </div>
                 </div>
               </section>
+
               <!-- RESULTS -->
-              <div>
-                <p>Your BMI is...</p>
-                <p id="BMIResult"></p>
-                <p>
+              <div
+                id="resultsSection"
+                class="bg-blue hidden rounded-2xl p-8 text-white"
+              >
+                <p class="font-semibold">Your BMI is...</p>
+                <p
+                  id="BMIResult"
+                  class="text-headingL/110 mt-2 font-semibold"
+                ></p>
+                <p class="text-bodyS/150 mt-6">
                   Your BMI suggests you're <span id="weightDescription"></span>.
                   Your ideal weight is between
-                  <span id="idealWeightRange"></span>.
+                  <span id="idealWeightRange" class="font-semibold"></span>.
                 </p>
               </div>
             </form>
