@@ -8,6 +8,7 @@
 @tailwind utilities;
 
 @layer components {
+  /* FORM LABEL AND INPUT STYLING */
   label:has(input:checked) .unchecked {
     @apply hidden;
   }
@@ -21,14 +22,47 @@
   }
 
   .input-container input {
-    @apply text-gunmetal w-full px-6 py-5 outline-none;
+    @apply text-gunmetal mob:pl-6 w-full py-5 pl-4 outline-none;
   }
 
   .input-container p {
-    @apply text-blue px-6 py-5;
+    @apply text-blue mob:pr-6 py-5 pr-4;
   }
 
   .form-group label {
     @apply text-bodyS/150;
+  }
+
+  /* BMI ADVICE CARD STYLING */
+  .advice-card {
+    h3 {
+      @apply text-headingM/120 tracking-heading text-gunmetal mt-8 font-semibold;
+    }
+
+    p {
+      @apply mt-6;
+    }
+  }
+
+  /* SECTION MARGINS */
+  .supporting-content section {
+    @apply mt-18;
+  }
+
+  /* LIMITATION CARD STYLING */
+  .limitation-card {
+    @apply shadow-card relative rounded-2xl bg-white p-6;
+
+    p {
+      @apply mt-4;
+    }
+  }
+
+  .limitation-heading {
+    @apply flex items-center gap-4;
+
+    h3 {
+      @apply text-headingS text-gunmetal tracking-heading font-semibold;
+    }
   }
 }

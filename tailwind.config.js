@@ -3,6 +3,9 @@ module.exports = {
   content: ["./*{html,js}"],
   theme: {
     extend: {
+      screens: {
+        mob: "375px",
+      },
       colors: {
         gunmetal: "#253347",
         darkElectricBlue: "#5E6E85",
@@ -16,6 +19,7 @@ module.exports = {
       fontSize: {
         headingXl: "4rem",
         headingL: "3rem",
+        headingMed: "2rem",
         headingM: "1.5rem",
         headingS: "1.25rem",
         bodyM: "1rem",
@@ -35,6 +39,7 @@ module.exports = {
       },
       margin: {
         4.5: "1.125rem",
+        18: "4.5rem",
       },
       gap: {
         4.5: "1.125rem",
@@ -43,6 +48,9 @@ module.exports = {
         bgPattern: "35px",
       },
       boxShadow: {
+        card: "1rem 2rem 3.5rem 0 rgba(143, 174, 207, 25%)",
+      },
+      dropShadow: {
         card: "1rem 2rem 3.5rem 0 rgba(143, 174, 207, 25%)",
       },
     },
