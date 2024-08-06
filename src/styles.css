@@ -6,3 +6,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  label:has(input:checked) .unchecked {
+    @apply hidden;
+  }
+
+  label:not(:has(input:checked)) .checked {
+    @apply hidden;
+  }
+
+  .input-container {
+    @apply border-darkElectricBlue text-headingM/120 mt-2 flex overflow-hidden rounded-xl border font-semibold;
+  }
+
+  .input-container input {
+    @apply text-gunmetal w-full px-6 py-5 outline-none;
+  }
+
+  .input-container p {
+    @apply text-blue px-6 py-5;
+  }
+
+  .form-group label {
+    @apply text-bodyS/150;
+  }
+}

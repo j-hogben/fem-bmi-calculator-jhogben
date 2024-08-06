@@ -16,14 +16,26 @@
 
     <title>Frontend Mentor | Body Mass Index Calculator</title>
   </head>
-  <body class="font-body text-bodyM/150">
-    <main>
-      <section>
+  <body class="font-body text-bodyM/150 text-darkElectricBlue">
+    <main class="py-8">
+      <section class="px-6">
+        <div
+          class="h-bgPatternMob from-gradTopLeft to-gradBottomRight rounded-b-bgPattern absolute left-0 top-0 -z-10 w-full bg-gradient-to-br"
+        ></div>
+
         <!-- OPENING DESCRIPTION -->
-        <div>
-          <img src="./assets/images/logo.svg" alt="" />
-          <h1>Body Mass Index Calculator</h1>
-          <p>
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="./assets/images/logo.svg"
+            alt=""
+            class="m-[1.64px] h-[36.72px]"
+          />
+          <h1
+            class="text-headingL/110 text-gunmetal tracking-heading mt-6 font-semibold"
+          >
+            Body Mass Index Calculator
+          </h1>
+          <p class="mt-6">
             Better understand your weight in relation to your height using our
             body mass index (BM) calculator. While BMI is not the sole
             determinant of a healthy weight, it offers a valuable starting point
@@ -32,65 +44,139 @@
         </div>
 
         <!-- BMI CALCULATOR -->
-        <article>
-          <div class="border-2 border-slate-600">
-            <h2>Enter your details below</h2>
+        <article class="shadow-card mt-12 rounded-2xl bg-white p-6">
+          <div>
+            <h2
+              class="text-headingM/120 tracking-heading text-gunmetal font-semibold"
+            >
+              Enter your details below
+            </h2>
 
             <!-- IMPERIAL OR METRIC -->
-            <form id="unitSelection" class="flex">
-              <label for="metric" class="flex">
+            <form id="unitSelection" class="flex w-full flex-wrap gap-x-6">
+              <label
+                for="metric"
+                class="gap-4.5 mt-6 flex w-full flex-1 items-center"
+              >
+                <svg
+                  width="31"
+                  height="31"
+                  viewBox="0 0 31 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="checked"
+                >
+                  <circle
+                    cx="15.5"
+                    cy="15.5"
+                    r="15.5"
+                    fill="#345FF6"
+                    fill-opacity="0.15"
+                  />
+                  <circle cx="15.5" cy="15.5" r="7.5" fill="#345FF6" />
+                </svg>
+                <svg
+                  width="31"
+                  height="31"
+                  viewBox="0 0 31 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="unchecked"
+                >
+                  <circle
+                    cx="15.5"
+                    cy="15.5"
+                    r="15"
+                    fill="white"
+                    stroke="#5E6E85"
+                  />
+                </svg>
+                <p class="text-gunmetal font-semibold">Metric</p>
                 <input
                   type="radio"
                   name="formUnits"
                   id="metric"
                   value="metric"
                   autocomplete="off"
-                  class="format-input"
+                  class="format-input sr-only max-w-fit"
                   checked
                 />
-                <p>Metric</p>
               </label>
-              <label for="imperial" class="flex">
+              <label
+                for="imperial"
+                class="gap-4.5 mt-6 flex w-full flex-1 items-center"
+              >
+                <svg
+                  width="31"
+                  height="31"
+                  viewBox="0 0 31 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="checked"
+                >
+                  <circle
+                    cx="15.5"
+                    cy="15.5"
+                    r="15.5"
+                    fill="#345FF6"
+                    fill-opacity="0.15"
+                  />
+                  <circle cx="15.5" cy="15.5" r="7.5" fill="#345FF6" />
+                </svg>
+                <svg
+                  width="31"
+                  height="31"
+                  viewBox="0 0 31 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="unchecked"
+                >
+                  <circle
+                    cx="15.5"
+                    cy="15.5"
+                    r="15"
+                    fill="white"
+                    stroke="#5E6E85"
+                  />
+                </svg>
+                <p class="text-gunmetal font-semibold">Imperial</p>
                 <input
                   type="radio"
                   name="formUnits"
                   id="imperial"
                   value="imperial"
                   autocomplete="off"
-                  class="format-input"
+                  class="format-input sr-only"
                 />
-                <p>Imperial</p>
               </label>
             </form>
 
-            <!--  -->
-            <form action="" id="BMICalculator">
+            <!-- ENTRY FORM -->
+            <form action="" id="BMICalculator" class="mt-6">
               <!-- METRIC CALCULATOR -->
-              <section id="metric-form" class="block">
+              <section id="metric-form" class="">
                 <div class="form-group">
                   <label for="heightCm">Height</label>
-                  <div
-                    class="input-container flex justify-between border border-red-500"
-                  >
+                  <div class="input-container">
                     <input
                       type="text"
                       id="heightCm"
                       inputmode="decimal"
+                      maxlength="5"
                       autocomplete="off"
                       class="format-input decimal-allowed"
                     />
                     <p>cm</p>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-4">
                   <label for="massKg">Weight</label>
-                  <div
-                    class="input-container flex justify-between border border-red-500"
-                  >
+                  <div class="input-container">
                     <input
                       type="text"
                       id="massKg"
                       inputmode="decimal"
+                      maxlength="5"
                       autocomplete="off"
                       class="format-input decimal-allowed"
                     />
@@ -100,16 +186,18 @@
               </section>
 
               <!-- IMPERIAL CALCULATOR -->
-              <section id="imperial-form" class="hidden">
+              <section
+                id="imperial-form"
+                class="grid hidden grid-cols-2 items-end gap-4"
+              >
                 <div class="form-group">
                   <label for="heightFt">Height</label>
-                  <div
-                    class="input-container flex justify-between border border-red-500"
-                  >
+                  <div class="input-container">
                     <input
                       type="text"
                       id="heightFt"
                       inputmode="numeric"
+                      maxlength="1"
                       autocomplete="off"
                       class="format-input"
                     />
@@ -117,13 +205,12 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <div
-                    class="input-container flex justify-between border border-red-500"
-                  >
+                  <div class="input-container">
                     <input
                       type="text"
                       id="heightIn"
                       inputmode="numeric"
+                      maxlength="2"
                       autocomplete="off"
                       class="format-input"
                     />
@@ -132,18 +219,28 @@
                 </div>
                 <div class="form-group">
                   <label for="massSt">Weight</label>
-                  <div
-                    class="input-container flex justify-between border border-red-500"
-                  >
-                    <input type="text" id="massSt" inputmode="numeric" />
+                  <div class="input-container">
+                    <input
+                      type="text"
+                      id="massSt"
+                      inputmode="numeric"
+                      maxlength="2"
+                      autocomplete="off"
+                      class="format-input"
+                    />
                     <p>st</p>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div
-                    class="input-container flex justify-between border border-red-500"
-                  >
-                    <input type="text" id="massLb" inputmode="numeric" />
+                  <div class="input-container">
+                    <input
+                      type="text"
+                      id="massLb"
+                      inputmode="numeric"
+                      maxlength="2"
+                      autocomplete="off"
+                      class="format-input"
+                    />
                     <p>lbs</p>
                   </div>
                 </div>
@@ -152,7 +249,7 @@
               <!-- RESULTS -->
               <div
                 id="resultsSection"
-                class="bg-blue hidden rounded-2xl p-8 text-white"
+                class="bg-blue mt-6 hidden rounded-2xl p-8 text-white"
               >
                 <p class="font-semibold">Your BMI is...</p>
                 <p
